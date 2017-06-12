@@ -45,7 +45,23 @@ void printArr(std::string *arr, int size)
 
 void sortAnagram(std::string *arr, int size)
 {
+	for(int i = 0; i < size; i++)
+	{
+		int j  = i + 1;
+		bool anagram = false;
+		while( !(anagram) && j < size)
+		{
+			if(isAnagram(arr[i], arr[j]))
+			{
+				std::cout << "These two are anagrams: " << arr[i] << ", " << arr[j] << std::endl;
+				anagram = true;
+				swap(arr, i+1, j);
+			}
 
+			j++;
+		}
+		
+	}
 }
 
 int main(int argc, char *argv[])
